@@ -1,17 +1,17 @@
 from flask import Flask, jsonify
 
-app = Flask(_name_)
+app = Flask(__name__)
 
-task = [
-	{"id":1, "nombre":"guts", "enable":True},
-	{"id":2, "nombre":"casca", "enable":True},
-	{"id":3, "nombre":"griffith", "enable":True},
-	{"id":4, "nombre":"pipin", "enable":True},
+tasks = [
+    {"id":1, "nombre":"omar", "enable":True},
+    {"id":2, "nombre":"jessie", "enable":False},
+    {"id":3, "nombre":"jocelyn", "enable":True},
+    {"id":4, "nombre":"braulio", "enable":False}
 ]
 
-@app.route('/tasks', methods=['GET'])
+@app.route('/tasks',methods=['GET'])
 def get_tasks():
-	return jsonify(task)
-	
-if _name_ == '_main_':
-	app.run(debug=True)
+        return jsonify(tasks)
+
+if __name__ == '__main__':
+        app.run(debug=True)
