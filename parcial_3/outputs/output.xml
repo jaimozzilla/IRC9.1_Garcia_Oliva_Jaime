@@ -1,0 +1,14 @@
+<urls>
+  <url>
+    <location>https://www.facebook.com/</location>
+    <status_code>200</status_code>
+  </url>
+  <url>
+    <location>https://www.instagram.com/</location>
+    <status_code>200</status_code>
+  </url>
+  <url>
+    <location>https://www.reddit.com/</location>
+    <status_code>302</status_code>
+  </url>
+</urls>

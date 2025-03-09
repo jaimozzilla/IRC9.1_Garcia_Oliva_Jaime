@@ -1,0 +1,11 @@
+{
+  "https://www.facebook.com/": {
+    "status_code": 200
+  },
+  "https://www.instagram.com/": {
+    "status_code": 200
+  },
+  "https://www.reddit.com/": {
+    "status_code": 302
+  }
+}
