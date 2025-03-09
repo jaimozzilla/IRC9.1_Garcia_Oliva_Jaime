@@ -21,4 +21,3 @@ bash
 
 # Registrar cierre de sesión
 echo "===== Sesión SSH finalizada en $(date) =====" >> "$LOGFILE"
-
