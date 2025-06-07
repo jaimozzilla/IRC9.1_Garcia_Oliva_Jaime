@@ -1,0 +1,17 @@
+- name: Configuración común para todos los nodos
+  hosts: all
+  become: true
+  roles:
+    - common
+
+- name: Configuración del nodo master
+  hosts: masters
+  become: true
+  roles:
+    - master
+
+- name: Configuración de los nodos worker
+  hosts: workers
+  become: true
+  roles:
+    - worker

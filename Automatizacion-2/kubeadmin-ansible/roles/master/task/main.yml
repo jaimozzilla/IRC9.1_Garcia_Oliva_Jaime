@@ -1,0 +1,26 @@
+- name: Inicializa el clúster Kubernetes en el master
+  command: kubeadm init --pod-network-cidr={{ pod_network_cidr }}
+  register: kubeadm_output
+  args:
+    creates: /etc/kubernetes/admin.conf
+
+- name: Crea el directorio .kube
+  file:
+    path: /home/jesus/.kube
+    state: directory
+    owner: jesus
+    mode: 0755
+
+- name: Copia el archivo admin.conf
+  copy:
+    src: /etc/kubernetes/admin.conf
+    dest: /home/jesus/.kube/config
+    remote_src: yes
+    owner: jesus
+    mode: 0644
+
+- name: Aplica red de pods (Flannel)
+  shell: |
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  environment:
+    KUBECONFIG: /etc/kubernetes/admin.conf
