@@ -1,0 +1,27 @@
+# Archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+
+# Entornos virtuales
+env/
+venv/
+.Python
+
+# Configuración de entorno
+.env
+
+# Git
+.git/
+.gitignore
+
+# Archivos del sistema/macOS
+.DS_Store
+Thumbs.db
+
+# Archivos de log o temporales
+*.log
+*.swp
